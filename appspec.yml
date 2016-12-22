@@ -1,0 +1,41 @@
+version: 0.0
+os: linux
+files:
+  - source: index.php
+    destination: /var/www/html
+  - source: index-error.php
+    destination: /var/www/html
+  - source: images
+    destination: /var/www/html/images
+permissions:
+  - object: /var/www/html
+    pattern: "*.php"
+    owner: apache
+    group: apache
+    mode: 775
+    type:
+      - file
+  - object: /var/www/html/images
+    pattern: "**"
+    owner: apache
+    group: apache
+    mode: 664
+    type:
+      - directory
+hooks:
+  BeforeInstall:
+    - location: scripts/install_dependencies.sh
+      timeout: 300
+      runas: root
+  AfterInstall:
+    - location: scripts/configure.sh
+      timeout: 300
+      runas: root
+  ApplicationStart:
+    - location: scripts/start_application.sh
+      timeout: 300
+      runas: root
+  ApplicationStop:
+    - location: scripts/stop_application.sh
+      timeout: 300
+      runas: root
