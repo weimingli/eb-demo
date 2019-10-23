@@ -1,4 +1,4 @@
 #!/bin/bash
 
 yum update -y
-yum groupinstall -y "Web Server" "PHP Support"
+yum install -y httpd php
