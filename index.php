@@ -34,7 +34,7 @@
 				<img src="images/AWS_Logo_Web_200px.png">
 				<br/>
 				<br/>
-			<h2>Instance Metadata<h2>
+			<h2>Hello DevOps !!!!<h2>
 			<p style="font-style"italic;">(From the locally installed metadata service http://169.254.169.254/latest)</p>
 
 	<table border="1" width="100%" cellpadding="0" cellspacing="0" id="content-table">
